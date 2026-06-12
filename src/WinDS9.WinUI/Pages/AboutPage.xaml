@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="WinDS9.WinUI.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinDS9.WinUI.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Padding="24,16,24,16" RowSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="WinDS9" />
+        <StackPanel Grid.Row="1" MaxWidth="720" HorizontalAlignment="Left" Spacing="10">
+            <TextBlock TextWrapping="Wrap" Text="Native Windows rewrite of SAOImage DS9 behavior, built on WinUI 3 and WinDS9.Engine." />
+            <TextBlock TextWrapping="Wrap" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="Current engine slice: FITS HDU discovery, DS9-derived EVENTS table selection, TLMIN/TLMAX/TDBIN coordinate mapping, block/sum binning, raster stretch rendering." />
+        </StackPanel>
+    </Grid>
+</Page>

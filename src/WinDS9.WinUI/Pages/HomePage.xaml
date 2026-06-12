@@ -1,0 +1,1028 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="WinDS9.WinUI.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinDS9.WinUI.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="Transparent"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="GlassSurfaceBrush" Color="#CCF8FAFD" />
+                    <SolidColorBrush x:Key="GlassBarBrush" Color="#DDEEF2F7" />
+                    <SolidColorBrush x:Key="GlassStrokeBrush" Color="#667B8794" />
+                    <SolidColorBrush x:Key="FrameTabBarBrush" Color="#EAF6F8FB" />
+                    <SolidColorBrush x:Key="InspectorSectionDefaultBrush" Color="#B8EEF2F7" />
+                    <SolidColorBrush x:Key="InspectorSectionHoverBrush" Color="#D4E8EDF4" />
+                    <SolidColorBrush x:Key="InspectorSectionActiveBrush" Color="#E2DCEBFA" />
+                    <SolidColorBrush x:Key="InspectorSectionDefaultStrokeBrush" Color="#447B8794" />
+                    <SolidColorBrush x:Key="InspectorSectionHoverStrokeBrush" Color="#667B8794" />
+                    <SolidColorBrush x:Key="InspectorSectionActiveStrokeBrush" Color="#AA4F8FD9" />
+                    <SolidColorBrush x:Key="ReadoutSectionBrush" Color="#E8E7F1FA" />
+                    <SolidColorBrush x:Key="ImageViewportBrush" Color="#E8F2F5FA" />
+                    <SolidColorBrush x:Key="SizerHoverBrush" Color="#667B8794" />
+                    <SolidColorBrush x:Key="RegionOverlayBrush" Color="#FF0F7A3D" />
+                    <SolidColorBrush x:Key="SelectedRegionOverlayBrush" Color="#FF9A6500" />
+                    <SolidColorBrush x:Key="ContourOverlayBrush" Color="#FF0067B8" />
+                    <SolidColorBrush x:Key="WcsGridOverlayBrush" Color="#CC335C97" />
+                    <SolidColorBrush x:Key="InvisibleBrush" Color="Transparent" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="GlassSurfaceBrush" Color="#3612151B" />
+                    <SolidColorBrush x:Key="GlassBarBrush" Color="#511E2228" />
+                    <SolidColorBrush x:Key="GlassStrokeBrush" Color="#38FFFFFF" />
+                    <SolidColorBrush x:Key="FrameTabBarBrush" Color="#E510141B" />
+                    <SolidColorBrush x:Key="InspectorSectionDefaultBrush" Color="#381E2228" />
+                    <SolidColorBrush x:Key="InspectorSectionHoverBrush" Color="#5630383F" />
+                    <SolidColorBrush x:Key="InspectorSectionActiveBrush" Color="#7042625D" />
+                    <SolidColorBrush x:Key="InspectorSectionDefaultStrokeBrush" Color="#2CFFFFFF" />
+                    <SolidColorBrush x:Key="InspectorSectionHoverStrokeBrush" Color="#52FFFFFF" />
+                    <SolidColorBrush x:Key="InspectorSectionActiveStrokeBrush" Color="#9995C7FF" />
+                    <SolidColorBrush x:Key="ReadoutSectionBrush" Color="#66324243" />
+                    <SolidColorBrush x:Key="ImageViewportBrush" Color="#6A0C0E14" />
+                    <SolidColorBrush x:Key="SizerHoverBrush" Color="#66FFFFFF" />
+                    <SolidColorBrush x:Key="RegionOverlayBrush" Color="#FF5BE277" />
+                    <SolidColorBrush x:Key="SelectedRegionOverlayBrush" Color="#FFFFD24A" />
+                    <SolidColorBrush x:Key="ContourOverlayBrush" Color="#FF42B7FF" />
+                    <SolidColorBrush x:Key="WcsGridOverlayBrush" Color="#B478D2FF" />
+                    <SolidColorBrush x:Key="InvisibleBrush" Color="Transparent" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="HighContrast">
+                    <StaticResource x:Key="GlassSurfaceBrush" ResourceKey="SystemColorWindowColorBrush" />
+                    <StaticResource x:Key="GlassBarBrush" ResourceKey="SystemColorButtonFaceColorBrush" />
+                    <StaticResource x:Key="GlassStrokeBrush" ResourceKey="SystemColorWindowTextColorBrush" />
+                    <StaticResource x:Key="FrameTabBarBrush" ResourceKey="SystemColorWindowColorBrush" />
+                    <StaticResource x:Key="InspectorSectionDefaultBrush" ResourceKey="SystemColorWindowColorBrush" />
+                    <StaticResource x:Key="InspectorSectionHoverBrush" ResourceKey="SystemColorHighlightColorBrush" />
+                    <StaticResource x:Key="InspectorSectionActiveBrush" ResourceKey="SystemColorHighlightColorBrush" />
+                    <StaticResource x:Key="InspectorSectionDefaultStrokeBrush" ResourceKey="SystemColorWindowTextColorBrush" />
+                    <StaticResource x:Key="InspectorSectionHoverStrokeBrush" ResourceKey="SystemColorHighlightTextColorBrush" />
+                    <StaticResource x:Key="InspectorSectionActiveStrokeBrush" ResourceKey="SystemColorHighlightTextColorBrush" />
+                    <StaticResource x:Key="ReadoutSectionBrush" ResourceKey="SystemColorWindowColorBrush" />
+                    <StaticResource x:Key="ImageViewportBrush" ResourceKey="SystemColorWindowColorBrush" />
+                    <StaticResource x:Key="SizerHoverBrush" ResourceKey="SystemColorHighlightColorBrush" />
+                    <StaticResource x:Key="RegionOverlayBrush" ResourceKey="SystemColorHotlightColorBrush" />
+                    <StaticResource x:Key="SelectedRegionOverlayBrush" ResourceKey="SystemColorHighlightColorBrush" />
+                    <StaticResource x:Key="ContourOverlayBrush" ResourceKey="SystemColorWindowTextColorBrush" />
+                    <StaticResource x:Key="WcsGridOverlayBrush" ResourceKey="SystemColorHotlightColorBrush" />
+                    <StaticResource x:Key="InvisibleBrush" ResourceKey="SystemColorWindowColorBrush" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <Style x:Key="InspectorSectionBorderStyle" TargetType="Border">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Background" Value="{ThemeResource InspectorSectionDefaultBrush}" />
+            <Setter Property="BackgroundSizing" Value="InnerBorderEdge" />
+            <Setter Property="BorderBrush" Value="{ThemeResource InspectorSectionDefaultStrokeBrush}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="{ThemeResource OverlayCornerRadius}" />
+            </Style>
+            <Style x:Key="InspectorSectionButtonStyle" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="12,10" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="MinHeight" Value="0" />
+            <Setter Property="UseSystemFocusVisuals" Value="False" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="Transparent">
+                            <ContentPresenter
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Content="{TemplateBinding Content}"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                ContentTransitions="{TemplateBinding ContentTransitions}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            </Style>
+            <Style x:Key="InspectorTitleTextStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+            </Style>
+            <Style x:Key="InspectorDescriptionTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="Foreground" Value="{ThemeResource TextFillColorSecondaryBrush}" />
+            <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid
+        x:Name="RootSurface"
+        AutomationProperties.AutomationId="HomeRootSurface"
+        AutomationProperties.Name="WinDS9 workspace"
+        AllowDrop="True"
+        Background="{ThemeResource GlassSurfaceBrush}"
+        DragOver="Root_DragOver"
+        Drop="Root_Drop">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="32" />
+        </Grid.RowDefinitions>
+
+        <CommandBar
+            x:Name="MainCommandBar"
+            AutomationProperties.AutomationId="MainCommandBar"
+            AutomationProperties.Name="Main command bar"
+            Grid.Row="0"
+            Background="{ThemeResource GlassBarBrush}"
+            DefaultLabelPosition="Right"
+            IsDynamicOverflowEnabled="True">
+            <AppBarButton
+                AutomationProperties.AutomationId="OpenFileButton"
+                AutomationProperties.Name="Open FITS file"
+                Icon="OpenFile"
+                Label="Open"
+                Click="Open_Click" />
+            <AppBarButton
+                AutomationProperties.AutomationId="OpenSampleButton"
+                AutomationProperties.Name="Open sample FITS file"
+                Icon="Pictures"
+                Label="Sample"
+                Click="OpenSample_Click" />
+            <AppBarButton
+                AutomationProperties.AutomationId="SavePngButton"
+                AutomationProperties.Name="Save current frame as PNG"
+                Label="PNG"
+                Click="SavePng_Click">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE74E;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton
+                AutomationProperties.AutomationId="RecentFilesButton"
+                AutomationProperties.Name="Recent files"
+                Label="Recent">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE823;" />
+                </AppBarButton.Icon>
+                <AppBarButton.Flyout>
+                    <Flyout>
+                        <Border
+                            x:Name="RecentFlyoutSurface"
+                            Width="420"
+                            MaxHeight="360"
+                            Padding="8"
+                            Background="{ThemeResource GlassSurfaceBrush}">
+                            <ListView
+                                x:Name="RecentList"
+                                AutomationProperties.AutomationId="RecentFilesList"
+                                AutomationProperties.Name="Recent files list"
+                                IsItemClickEnabled="True"
+                                ItemClick="RecentList_ItemClick"
+                                SelectionMode="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate x:DataType="local:RecentFileItem">
+                                        <TextBlock
+                                            Text="{x:Bind Path, Mode=OneTime}"
+                                            TextTrimming="CharacterEllipsis"
+                                            ToolTipService.ToolTip="{x:Bind Path, Mode=OneTime}" />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Border>
+                    </Flyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+
+            <AppBarSeparator />
+
+            <AppBarButton
+                AutomationProperties.AutomationId="BinButton"
+                AutomationProperties.Name="Bin current image"
+                Label="Bin"
+                Click="Bin_Click">
+                <AppBarButton.Icon>
+                    <FontIcon Glyph="&#xE9D9;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton
+                AutomationProperties.AutomationId="FitButton"
+                AutomationProperties.Name="Fit image to viewport"
+                Icon="View"
+                Label="Fit"
+                Click="Fit_Click" />
+            <AppBarButton
+                AutomationProperties.AutomationId="ActualSizeButton"
+                AutomationProperties.Name="Show image at actual size"
+                Icon="Zoom"
+                Label="1:1"
+                Click="ActualSize_Click" />
+            <AppBarButton
+                AutomationProperties.AutomationId="ZoomOutButton"
+                AutomationProperties.Name="Zoom out"
+                Icon="Remove"
+                Label="Zoom out"
+                Click="ZoomOut_Click" />
+            <AppBarButton
+                AutomationProperties.AutomationId="ZoomInButton"
+                AutomationProperties.Name="Zoom in"
+                Icon="Add"
+                Label="Zoom in"
+                Click="ZoomIn_Click" />
+            <AppBarToggleButton
+                x:Name="BlinkButton"
+                AutomationProperties.AutomationId="BlinkFramesButton"
+                AutomationProperties.Name="Blink frames"
+                Label="Blink"
+                Click="Blink_Click">
+                <AppBarToggleButton.Icon>
+                    <FontIcon Glyph="&#xE7C3;" />
+                </AppBarToggleButton.Icon>
+            </AppBarToggleButton>
+
+            <AppBarSeparator />
+
+            <AppBarButton
+                AutomationProperties.AutomationId="OpenRegionButton"
+                AutomationProperties.Name="Open region file"
+                Icon="Edit"
+                Label="Region"
+                Click="OpenRegion_Click" />
+            <AppBarButton
+                AutomationProperties.AutomationId="OpenCatalogButton"
+                AutomationProperties.Name="Open catalog file"
+                Icon="MapPin"
+                Label="Catalog"
+                Click="OpenCatalog_Click" />
+
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <TextBox
+                        x:Name="CommandTextBox"
+                        AutomationProperties.AutomationId="CommandTextBox"
+                        AutomationProperties.Name="DS9 command"
+                        Width="260"
+                        PlaceholderText="DS9 command"
+                        KeyDown="CommandTextBox_KeyDown" />
+                    <Button
+                        AutomationProperties.AutomationId="RunCommandButton"
+                        AutomationProperties.Name="Run DS9 command"
+                        MinWidth="52"
+                        Click="RunCommand_Click"
+                        Content="Run" />
+                    <ProgressRing
+                        x:Name="BusyRing"
+                        Width="22"
+                        Height="22"
+                        Margin="8,0,0,0"
+                        IsActive="False"
+                        Visibility="Collapsed" />
+                </StackPanel>
+            </CommandBar.Content>
+        </CommandBar>
+
+        <Grid
+            x:Name="ContentSurface"
+            Grid.Row="1"
+            Background="{ThemeResource GlassSurfaceBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition
+                    x:Name="InspectorColumn"
+                    Width="320"
+                    MinWidth="200"
+                    MaxWidth="840" />
+                <ColumnDefinition Width="8" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border
+                x:Name="InspectorPanel"
+                AutomationProperties.AutomationId="InspectorPanel"
+                AutomationProperties.Name="Inspector panel"
+                Grid.Column="0"
+                Padding="16,16,8,16"
+                Background="{ThemeResource GlassSurfaceBrush}"
+                BorderBrush="{ThemeResource GlassStrokeBrush}"
+                BorderThickness="0,0,1,0">
+                <Grid RowSpacing="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="0,0,24,0" Spacing="10">
+                            <Border
+                                x:Name="ReadoutSection"
+                                AutomationProperties.AutomationId="ReadoutSection"
+                                AutomationProperties.Name="Pointer readout"
+                                Padding="12"
+                                Style="{StaticResource InspectorSectionBorderStyle}">
+                                <StackPanel Spacing="10">
+                                    <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <FontIcon
+                                            Width="18"
+                                            FontSize="15"
+                                            Glyph="&#xE9D2;"
+                                            Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                            <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Readout" />
+                                            <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Pointer value and coordinates" />
+                                        </StackPanel>
+                                    </Grid>
+
+                                    <Grid
+                                        x:Name="ReadoutSectionContent"
+                                        RowSpacing="8"
+                                        ColumnSpacing="12">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="76" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Text="Value" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="ValueText" Grid.Row="0" Grid.Column="1" />
+                                        <TextBlock Grid.Row="1" Text="Image" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="ImageCoordText" Grid.Row="1" Grid.Column="1" />
+                                        <TextBlock Grid.Row="2" Text="Physical" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="PhysicalCoordText" Grid.Row="2" Grid.Column="1" />
+                                        <TextBlock Grid.Row="3" Text="WCS" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="WcsCoordText" Grid.Row="3" Grid.Column="1" MinHeight="38" TextWrapping="NoWrap" />
+                                        <TextBlock Grid.Row="4" Text="Display" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="DisplayCoordText" Grid.Row="4" Grid.Column="1" />
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border x:Name="CurrentSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="CurrentSectionButton"
+                                        AutomationProperties.AutomationId="CurrentSectionButton"
+                                        AutomationProperties.Name="Current document section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE8A5;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Current" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Loaded document" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <TextBlock
+                                        x:Name="FileText"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                        TextTrimming="CharacterEllipsis"
+                                        Visibility="Collapsed" />
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="WcsSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="WcsSectionButton"
+                                        AutomationProperties.AutomationId="WcsSectionButton"
+                                        AutomationProperties.Name="WCS section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE774;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="WCS" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Projection and sky coordinates" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <TextBlock
+                                        x:Name="WcsText"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                        TextWrapping="Wrap"
+                                        Visibility="Collapsed" />
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="ScaleSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="ScaleSectionButton"
+                                        AutomationProperties.AutomationId="ScaleSectionButton"
+                                        AutomationProperties.Name="Scale section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE9D9;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Scale" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Stretch and low/high cuts" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <StackPanel
+                                        x:Name="ScaleSectionContent"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        Spacing="8"
+                                        Visibility="Collapsed">
+                                        <ComboBox
+                                            x:Name="StretchCombo"
+                                            AutomationProperties.AutomationId="StretchCombo"
+                                            AutomationProperties.Name="Image stretch"
+                                            HorizontalAlignment="Stretch"
+                                            SelectionChanged="StretchCombo_SelectionChanged" />
+
+                                        <Grid ColumnSpacing="8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="Units" />
+                                            <ComboBox
+                                                x:Name="CutUnitCombo"
+                                                AutomationProperties.AutomationId="CutUnitCombo"
+                                                AutomationProperties.Name="Cut input unit"
+                                                Grid.Column="1"
+                                                HorizontalAlignment="Stretch"
+                                                SelectionChanged="CutUnitCombo_SelectionChanged" />
+                                        </Grid>
+
+                                        <Grid ColumnSpacing="8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="88" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="Low" />
+                                            <Slider
+                                                x:Name="LowCutSlider"
+                                                AutomationProperties.AutomationId="LowCutSlider"
+                                                AutomationProperties.Name="Low cut slider"
+                                                Grid.Column="1"
+                                                Minimum="0"
+                                                Maximum="1"
+                                                SmallChange="0.001"
+                                                LargeChange="0.05"
+                                                StepFrequency="0.001"
+                                                Value="0"
+                                                ValueChanged="CutSlider_ValueChanged" />
+                                            <TextBox
+                                                x:Name="LowCutValueText"
+                                                AutomationProperties.AutomationId="LowCutValueText"
+                                                AutomationProperties.Name="Low cut value"
+                                                Grid.Column="2"
+                                                MinWidth="78"
+                                                VerticalAlignment="Center"
+                                                KeyDown="CutValueBox_KeyDown"
+                                                LostFocus="CutValueBox_LostFocus"
+                                                TextAlignment="Right" />
+                                        </Grid>
+
+                                        <Grid ColumnSpacing="8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="88" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock VerticalAlignment="Center" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="High" />
+                                            <Slider
+                                                x:Name="HighCutSlider"
+                                                AutomationProperties.AutomationId="HighCutSlider"
+                                                AutomationProperties.Name="High cut slider"
+                                                Grid.Column="1"
+                                                Minimum="0"
+                                                Maximum="1"
+                                                SmallChange="0.001"
+                                                LargeChange="0.05"
+                                                StepFrequency="0.001"
+                                                Value="1"
+                                                ValueChanged="CutSlider_ValueChanged" />
+                                            <TextBox
+                                                x:Name="HighCutValueText"
+                                                AutomationProperties.AutomationId="HighCutValueText"
+                                                AutomationProperties.Name="High cut value"
+                                                Grid.Column="2"
+                                                MinWidth="78"
+                                                VerticalAlignment="Center"
+                                                KeyDown="CutValueBox_KeyDown"
+                                                LostFocus="CutValueBox_LostFocus"
+                                                TextAlignment="Right" />
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="ColorSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="ColorSectionButton"
+                                        AutomationProperties.AutomationId="ColorSectionButton"
+                                        AutomationProperties.Name="Color section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE790;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Color" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Colormap selection" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <ComboBox
+                                        x:Name="ColorMapCombo"
+                                        AutomationProperties.AutomationId="ColorMapCombo"
+                                        AutomationProperties.Name="Color map"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        HorizontalAlignment="Stretch"
+                                        SelectionChanged="ColorMapCombo_SelectionChanged"
+                                        Visibility="Collapsed" />
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="RegionSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="RegionSectionButton"
+                                        AutomationProperties.AutomationId="RegionSectionButton"
+                                        AutomationProperties.Name="Region section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE707;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Region" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Create, edit, and save overlays" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <StackPanel
+                                        x:Name="RegionSectionContent"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        Spacing="8"
+                                        Visibility="Collapsed">
+                                        <ComboBox
+                                            x:Name="RegionToolCombo"
+                                            AutomationProperties.AutomationId="RegionToolCombo"
+                                            AutomationProperties.Name="Region edit tool"
+                                            HorizontalAlignment="Stretch"
+                                            SelectionChanged="RegionToolCombo_SelectionChanged" />
+                                        <Grid ColumnSpacing="8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button
+                                                AutomationProperties.AutomationId="SaveRegionsButton"
+                                                AutomationProperties.Name="Save regions"
+                                                HorizontalAlignment="Stretch"
+                                                Click="SaveRegions_Click"
+                                                Content="Save" />
+                                            <Button
+                                                AutomationProperties.AutomationId="ClearRegionsButton"
+                                                AutomationProperties.Name="Clear regions"
+                                                Grid.Column="1"
+                                                HorizontalAlignment="Stretch"
+                                                Click="ClearRegions_Click"
+                                                Content="Clear" />
+                                        </Grid>
+                                        <TextBlock x:Name="RegionStatusText" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="None" TextWrapping="Wrap" />
+                                        <TextBlock x:Name="SelectedRegionText" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="Selected: --" TextWrapping="Wrap" />
+                                        <TextBox
+                                            x:Name="RegionLabelText"
+                                            AutomationProperties.AutomationId="RegionLabelText"
+                                            AutomationProperties.Name="Region label"
+                                            Header="Label"
+                                            LostFocus="RegionProperty_LostFocus" />
+                                        <TextBox
+                                            x:Name="RegionValuesText"
+                                            AutomationProperties.AutomationId="RegionValuesText"
+                                            AutomationProperties.Name="Region values"
+                                            AcceptsReturn="False"
+                                            Header="Values"
+                                            KeyDown="RegionValuesText_KeyDown"
+                                            LostFocus="RegionProperty_LostFocus"
+                                            TextWrapping="Wrap" />
+                                        <Grid ColumnSpacing="8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button
+                                                AutomationProperties.AutomationId="ApplyRegionPropertiesButton"
+                                                AutomationProperties.Name="Apply region properties"
+                                                HorizontalAlignment="Stretch"
+                                                Click="ApplyRegionProperties_Click"
+                                                Content="Apply" />
+                                            <Button
+                                                AutomationProperties.AutomationId="DuplicateRegionButton"
+                                                AutomationProperties.Name="Duplicate region"
+                                                Grid.Column="1"
+                                                HorizontalAlignment="Stretch"
+                                                Click="DuplicateRegion_Click"
+                                                Content="Copy" />
+                                            <Button
+                                                AutomationProperties.AutomationId="DeleteRegionButton"
+                                                AutomationProperties.Name="Delete region"
+                                                Grid.Column="2"
+                                                HorizontalAlignment="Stretch"
+                                                Click="DeleteRegion_Click"
+                                                Content="Delete" />
+                                        </Grid>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="FrameInfoSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="FrameInfoSectionButton"
+                                        AutomationProperties.AutomationId="FrameInfoSectionButton"
+                                        AutomationProperties.Name="Frame section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE7C3;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Frame" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="HDU, raster, load, zoom" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <Grid
+                                        x:Name="FrameInfoSectionContent"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        RowSpacing="8"
+                                        ColumnSpacing="12"
+                                        Visibility="Collapsed">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="76" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Row="0" Text="Frame" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="FrameText" Grid.Row="0" Grid.Column="1" />
+                                        <TextBlock Grid.Row="1" Text="HDU" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="HduText" Grid.Row="1" Grid.Column="1" TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Grid.Row="2" Text="Type" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="TypeText" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" />
+                                        <TextBlock Grid.Row="3" Text="Raster" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="RasterText" Grid.Row="3" Grid.Column="1" />
+                                        <TextBlock Grid.Row="4" Text="Rows" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="RowsText" Grid.Row="4" Grid.Column="1" />
+                                        <TextBlock Grid.Row="5" Text="Range" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="RangeText" Grid.Row="5" Grid.Column="1" />
+                                        <TextBlock Grid.Row="6" Text="Cut" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="CutText" Grid.Row="6" Grid.Column="1" />
+                                        <TextBlock Grid.Row="7" Text="Load" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="LoadText" Grid.Row="7" Grid.Column="1" />
+                                        <TextBlock Grid.Row="8" Text="Zoom" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="ZoomText" Grid.Row="8" Grid.Column="1" />
+                                        <TextBlock Grid.Row="9" Text="Cube" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                        <TextBlock x:Name="CubeText" Grid.Row="9" Grid.Column="1" />
+                                    </Grid>
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="CubeSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="CubeSectionButton"
+                                        AutomationProperties.AutomationId="CubeSectionButton"
+                                        AutomationProperties.Name="Cube section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE9D9;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Cube" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Plane controls" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <StackPanel
+                                        x:Name="CubeSectionContent"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        Spacing="8"
+                                        Visibility="Collapsed">
+                                        <Grid ColumnSpacing="8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Button
+                                                x:Name="PlanePreviousButton"
+                                                AutomationProperties.AutomationId="PlanePreviousButton"
+                                                AutomationProperties.Name="Previous cube plane"
+                                                MinWidth="36"
+                                                Click="PlanePrevious_Click"
+                                                Content="-" />
+                                            <Slider
+                                                x:Name="PlaneSlider"
+                                                AutomationProperties.AutomationId="PlaneSlider"
+                                                AutomationProperties.Name="Cube plane slider"
+                                                Grid.Column="1"
+                                                Minimum="1"
+                                                Maximum="1"
+                                                StepFrequency="1"
+                                                Value="1"
+                                                ValueChanged="PlaneSlider_ValueChanged" />
+                                            <Button
+                                                x:Name="PlaneNextButton"
+                                                AutomationProperties.AutomationId="PlaneNextButton"
+                                                AutomationProperties.Name="Next cube plane"
+                                                Grid.Column="2"
+                                                MinWidth="36"
+                                                Click="PlaneNext_Click"
+                                                Content="+" />
+                                        </Grid>
+                                        <TextBlock x:Name="PlaneText" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="2D" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="AnalysisSection" Style="{StaticResource InspectorSectionBorderStyle}">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Button
+                                        x:Name="AnalysisSectionButton"
+                                        AutomationProperties.AutomationId="AnalysisSectionButton"
+                                        AutomationProperties.Name="Analysis section"
+                                        Click="InspectorSection_Click"
+                                        Style="{StaticResource InspectorSectionButtonStyle}">
+                                        <Button.Content>
+                                            <Grid ColumnSpacing="10" HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon Width="18" FontSize="15" Glyph="&#xE9D9;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                                <StackPanel Grid.Column="1" MinWidth="0" Spacing="2">
+                                                    <TextBlock Style="{StaticResource InspectorTitleTextStyle}" Text="Analysis" />
+                                                    <TextBlock Style="{StaticResource InspectorDescriptionTextStyle}" Text="Statistics and generated overlays" />
+                                                </StackPanel>
+                                                <FontIcon Grid.Column="2" FontSize="12" Glyph="&#xE70D;" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                            </Grid>
+                                        </Button.Content>
+                                    </Button>
+                                    <TextBlock
+                                        x:Name="AnalysisText"
+                                        Grid.Row="1"
+                                        Margin="12,8,12,12"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                        Text="--"
+                                        TextWrapping="Wrap"
+                                        Visibility="Collapsed" />
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+
+                    <StackPanel Grid.Row="1" Spacing="6">
+                        <Button
+                            x:Name="LogToggleButton"
+                            AutomationProperties.AutomationId="LogToggleButton"
+                            AutomationProperties.Name="Toggle log panel"
+                            HorizontalAlignment="Stretch"
+                            Click="LogToggleButton_Click"
+                            Content="Log" />
+                        <Border
+                            x:Name="LogPanel"
+                            Padding="8"
+                            Background="{ThemeResource GlassBarBrush}"
+                            BorderBrush="{ThemeResource GlassStrokeBrush}"
+                            BorderThickness="1"
+                            Visibility="Collapsed">
+                            <TextBlock
+                                x:Name="LogText"
+                                FontFamily="Consolas"
+                                FontSize="12"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Border
+                x:Name="InspectorSizer"
+                AutomationProperties.AutomationId="InspectorSizer"
+                AutomationProperties.Name="Resize inspector"
+                Grid.Column="1"
+                Background="Transparent"
+                PointerEntered="InspectorSizer_PointerEntered"
+                PointerExited="InspectorSizer_PointerExited"
+                PointerMoved="InspectorSizer_PointerMoved"
+                PointerPressed="InspectorSizer_PointerPressed"
+                PointerReleased="InspectorSizer_PointerReleased"
+                ToolTipService.ToolTip="Resize inspector" />
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TabView
+                    x:Name="FrameTabs"
+                    AutomationProperties.AutomationId="FrameTabs"
+                    AutomationProperties.Name="Open frames"
+                    Grid.Row="0"
+                    Background="{ThemeResource FrameTabBarBrush}"
+                    Height="42"
+                    IsAddTabButtonVisible="False"
+                    SelectionChanged="FrameTabs_SelectionChanged"
+                    TabWidthMode="SizeToContent" />
+
+                <ScrollViewer
+                    x:Name="ImageScroll"
+                    AutomationProperties.AutomationId="ImageScrollViewer"
+                    AutomationProperties.Name="Image viewport"
+                    Grid.Row="1"
+                    Background="{ThemeResource ImageViewportBrush}"
+                    HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Auto"
+                    SizeChanged="ImageScroll_SizeChanged"
+                    UseLayoutRounding="True"
+                    ViewChanged="ImageScroll_ViewChanged"
+                    ZoomMode="Disabled">
+                    <Canvas
+                        x:Name="ViewportHost"
+                        Width="1"
+                        Height="1"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        UseLayoutRounding="True">
+                        <Canvas
+                            x:Name="ImageHost"
+                            AutomationProperties.AutomationId="ImageHost"
+                            AutomationProperties.Name="Rendered image workspace"
+                            Width="1"
+                            Height="1"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Background="Transparent"
+                            PointerExited="ImageHost_PointerExited"
+                            PointerPressed="ImageHost_PointerPressed"
+                            PointerMoved="ImageHost_PointerMoved"
+                            PointerReleased="ImageHost_PointerReleased"
+                            UseLayoutRounding="True">
+                            <Image
+                                x:Name="RasterImage"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Stretch="Fill"
+                                UseLayoutRounding="True" />
+                            <Canvas
+                                x:Name="RegionCanvas"
+                                IsHitTestVisible="False"
+                                RenderTransformOrigin="0,0"
+                                UseLayoutRounding="True">
+                                <Canvas.RenderTransform>
+                                    <ScaleTransform x:Name="ImageScale" ScaleX="1" ScaleY="1" />
+                                </Canvas.RenderTransform>
+                            </Canvas>
+                        </Canvas>
+                    </Canvas>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+
+        <Border
+            x:Name="StatusBar"
+            AutomationProperties.AutomationId="StatusBar"
+            AutomationProperties.Name="Status bar"
+            Grid.Row="2"
+            Padding="12,0"
+            Background="{ThemeResource GlassBarBrush}"
+            BorderBrush="{ThemeResource GlassStrokeBrush}"
+            BorderThickness="0,1,0,0">
+            <TextBlock
+                x:Name="StatusText"
+                VerticalAlignment="Center"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+        </Border>
+    </Grid>
+</Page>

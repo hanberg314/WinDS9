@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page
+    x:Class="WinDS9.WinUI.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinDS9.WinUI.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Padding="24,16,24,16" RowSpacing="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource TitleTextBlockStyle}" Text="Settings" />
+        <Grid Grid.Row="1" ColumnSpacing="12" RowSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="UI stack" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            <TextBlock Grid.Column="1" Text="Windows App SDK / WinUI 3" />
+            <TextBlock Grid.Row="1" Text="Renderer" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="CPU BGRA raster, Direct2D planned" />
+        </Grid>
+    </Grid>
+</Page>

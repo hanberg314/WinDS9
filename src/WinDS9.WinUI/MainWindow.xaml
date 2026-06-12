@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window
+    x:Class="WinDS9.WinUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinDS9.WinUI"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="WinDS9"
+    mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <MicaBackdrop />
+    </Window.SystemBackdrop>
+
+    <Grid x:Name="RootShell">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.ThemeDictionaries>
+                    <ResourceDictionary x:Key="Light">
+                        <SolidColorBrush x:Key="NavAcrylicPaneBrush" Color="#CCF8FAFD" />
+                        <SolidColorBrush x:Key="NavSizerHoverBrush" Color="#667B8794" />
+                        <SolidColorBrush x:Key="NavSizerTransparentBrush" Color="Transparent" />
+                    </ResourceDictionary>
+                    <ResourceDictionary x:Key="Dark">
+                        <SolidColorBrush x:Key="NavAcrylicPaneBrush" Color="#361E222A" />
+                        <SolidColorBrush x:Key="NavSizerHoverBrush" Color="#66FFFFFF" />
+                        <SolidColorBrush x:Key="NavSizerTransparentBrush" Color="Transparent" />
+                    </ResourceDictionary>
+                    <ResourceDictionary x:Key="HighContrast">
+                        <StaticResource x:Key="NavAcrylicPaneBrush" ResourceKey="SystemColorWindowColorBrush" />
+                        <StaticResource x:Key="NavSizerHoverBrush" ResourceKey="SystemColorHighlightColorBrush" />
+                        <StaticResource x:Key="NavSizerTransparentBrush" ResourceKey="SystemColorWindowColorBrush" />
+                    </ResourceDictionary>
+                </ResourceDictionary.ThemeDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TitleBar
+            x:Name="AppTitleBar"
+            AutomationProperties.AutomationId="AppTitleBar"
+            AutomationProperties.Name="WinDS9 title bar"
+            Title="WinDS9"
+            IsBackButtonVisible="False"
+            IsPaneToggleButtonVisible="True"
+            PaneToggleRequested="TitleBar_PaneToggleRequested" />
+
+        <Grid
+            x:Name="NavHost"
+            Grid.Row="1">
+            <NavigationView
+                x:Name="NavView"
+                AutomationProperties.AutomationId="MainNavigationView"
+                AutomationProperties.Name="Main navigation"
+                CompactPaneLength="48"
+                IsBackButtonVisible="Collapsed"
+                IsPaneToggleButtonVisible="False"
+                IsSettingsVisible="True"
+                OpenPaneLength="280"
+                PaneDisplayMode="Left"
+                Background="{ThemeResource NavAcrylicPaneBrush}"
+                SelectionChanged="NavView_SelectionChanged">
+                <NavigationView.Resources>
+                    <SolidColorBrush x:Key="NavigationViewDefaultPaneBackground" Color="Transparent" />
+                    <SolidColorBrush x:Key="NavigationViewExpandedPaneBackground" Color="Transparent" />
+                    <SolidColorBrush x:Key="NavigationViewContentBackground" Color="Transparent" />
+                    <SolidColorBrush x:Key="NavigationViewTopPaneBackground" Color="Transparent" />
+                </NavigationView.Resources>
+
+                <NavigationView.MenuItems>
+                    <NavigationViewItemHeader x:Name="NavFramesHeader" Content="Frames" />
+
+                    <NavigationViewItemHeader x:Name="NavToolsHeader" Content="Tools" />
+
+                    <NavigationViewItem
+                        AutomationProperties.AutomationId="NavEditItem"
+                        AutomationProperties.Name="Edit workspace"
+                        Content="Edit"
+                        Tag="edit">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="&#xE70F;" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem
+                        AutomationProperties.AutomationId="NavFrameItem"
+                        AutomationProperties.Name="Frame workspace"
+                        Content="Frame"
+                        Tag="frame">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="&#xE7C3;" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                    <NavigationViewItem
+                        AutomationProperties.AutomationId="NavAnalysisItem"
+                        AutomationProperties.Name="Analysis workspace"
+                        Content="Analysis"
+                        Tag="analysis">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="&#xE9D9;" />
+                        </NavigationViewItem.Icon>
+                        <NavigationViewItem.MenuItems>
+                            <NavigationViewItem
+                                AutomationProperties.AutomationId="NavAnalysisWcsItem"
+                                AutomationProperties.Name="Show WCS information"
+                                Content="WCS"
+                                Tag="analysis-wcs">
+                                <NavigationViewItem.Icon>
+                                    <FontIcon Glyph="&#xE774;" />
+                                </NavigationViewItem.Icon>
+                            </NavigationViewItem>
+                            <NavigationViewItem
+                                AutomationProperties.AutomationId="NavAnalysisGridItem"
+                                AutomationProperties.Name="Toggle WCS grid"
+                                Content="Grid"
+                                Tag="analysis-grid">
+                                <NavigationViewItem.Icon>
+                                    <FontIcon Glyph="&#xE80A;" />
+                                </NavigationViewItem.Icon>
+                            </NavigationViewItem>
+                            <NavigationViewItem
+                                AutomationProperties.AutomationId="NavAnalysisHeaderItem"
+                                AutomationProperties.Name="Show FITS header"
+                                Content="Header"
+                                Tag="analysis-header">
+                                <NavigationViewItem.Icon>
+                                    <FontIcon Glyph="&#xE8A5;" />
+                                </NavigationViewItem.Icon>
+                            </NavigationViewItem>
+                            <NavigationViewItem
+                                AutomationProperties.AutomationId="NavAnalysisContourItem"
+                                AutomationProperties.Name="Generate contour overlay"
+                                Content="Contour"
+                                Tag="analysis-contour">
+                                <NavigationViewItem.Icon>
+                                    <FontIcon Glyph="&#xEB05;" />
+                                </NavigationViewItem.Icon>
+                            </NavigationViewItem>
+                            <NavigationViewItem
+                                AutomationProperties.AutomationId="NavAnalysisRunItem"
+                                AutomationProperties.Name="Run image analysis"
+                                Content="Analysis"
+                                Tag="analysis-run">
+                                <NavigationViewItem.Icon>
+                                    <FontIcon Glyph="&#xE9D9;" />
+                                </NavigationViewItem.Icon>
+                            </NavigationViewItem>
+                        </NavigationViewItem.MenuItems>
+                    </NavigationViewItem>
+                </NavigationView.MenuItems>
+
+                <NavigationView.FooterMenuItems>
+                    <NavigationViewItem
+                        AutomationProperties.AutomationId="NavAboutItem"
+                        AutomationProperties.Name="About WinDS9"
+                        Content="About"
+                        Tag="about">
+                        <NavigationViewItem.Icon>
+                            <FontIcon Glyph="&#xEA3A;" />
+                        </NavigationViewItem.Icon>
+                    </NavigationViewItem>
+                </NavigationView.FooterMenuItems>
+
+                <Frame
+                    x:Name="NavFrame"
+                    AutomationProperties.AutomationId="NavFrame"
+                    AutomationProperties.Name="Current page" />
+            </NavigationView>
+
+            <Border
+                x:Name="NavPaneSizer"
+                AutomationProperties.AutomationId="NavPaneSizer"
+                AutomationProperties.Name="Resize frames and tools pane"
+                Width="8"
+                HorizontalAlignment="Left"
+                Background="Transparent"
+                PointerEntered="NavPaneSizer_PointerEntered"
+                PointerExited="NavPaneSizer_PointerExited"
+                PointerMoved="NavPaneSizer_PointerMoved"
+                PointerPressed="NavPaneSizer_PointerPressed"
+                PointerReleased="NavPaneSizer_PointerReleased"
+                ToolTipService.ToolTip="Resize frames/tools pane" />
+        </Grid>
+    </Grid>
+</Window>
