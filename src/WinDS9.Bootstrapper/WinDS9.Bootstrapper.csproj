@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RootNamespace>WinDS9.Bootstrapper</RootNamespace>
+    <AssemblyName>WinDS9</AssemblyName>
+    <ApplicationIcon>..\WinDS9.WinUI\Assets\AppIcon.ico</ApplicationIcon>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup Condition="Exists('Payload\WinDS9Payload.zip')">
+    <EmbeddedResource Include="Payload\WinDS9Payload.zip" LogicalName="WinDS9Payload.zip" />
+  </ItemGroup>
+</Project>
